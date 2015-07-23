@@ -11,7 +11,7 @@ Controllers.controller('VideoController', ['$scope', "$sce", '$routeParams', 'Vi
 		    'height': '264',
 		    'data-setup':'{}'
 		};
-		
+	$scope.events = [];
 	$scope.trustSrc = function(src) {
     	return $sce.trustAsResourceUrl(src);
   	};
@@ -25,22 +25,28 @@ Controllers.controller('VideoController', ['$scope', "$sce", '$routeParams', 'Vi
 	$scope.play = function(){
 		$scope.isPlaying = true;
 		$scope.videoService.player.play();
+		$scope.events.push({name: "Click Play: video"+videoSrc});
 	};
 	
 	$scope.pause = function(){
 		$scope.videoService.player.pause();
 		$scope.isPlaying = false;
+		$scope.events.push({name: "Click Pause: video"+videoSrc});
 	};
 	
 	$scope.backward = function(){
 		var currentTime = $scope.videoService.player.currentTime();
 		
 		$scope.videoService.player.currentTime(currentTime-5);
+		
+		$scope.events.push({name: "Click Backward: video"+videoSrc});
 	};
 	
 	$scope.forward = function(){
 		var currentTime = $scope.videoService.player.currentTime();
 		$scope.videoService.player.currentTime(currentTime+2);
+		$scope.events.push({name: "Click Forward: video"+videoSrc});
 	};
+	
 	
 }]);
