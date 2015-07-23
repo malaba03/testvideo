@@ -1,21 +1,22 @@
 app.directive('ngVideo', function($window) {
 	// constants
-	var player;
+	var margin = 80,
+        width = 500,
+        elemId = 'imprint_and_consumption';
 
 	return {
 		restrict : 'E',
 		scope : {
-			model : '='
+			val : '='
 		},
 		link : function(scope, element, attrs) {
-			scope.$watch('model', function(newVal, oldVal) {				
+			scope.$watch('val', function(newVal, oldVal) {				
 				// clear the elements inside of the directive
 				// if 'val' is undefined, exit
 				if (!newVal) {
-					//return;
+					return;
 				}
-				
-				console.log(newVal);
+
 			});
 		}
 	};

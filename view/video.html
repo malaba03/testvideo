@@ -1,0 +1,46 @@
+<div class="container" >
+    <div class="row">
+    	<div class="col-md-3"> </div>
+		<div class="col-md-6">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="row">
+						<!--ng-Video model="videoModel"></ng-Video-->
+						<div class="row">
+							<video id="video-id" class="video-js vjs-default-skin"> 
+							</video>
+						</div>
+						
+						<div class="row">
+							<div class="col-md-6">
+								<div class="btn-group" role="group">
+									<button type="button" class="btn btn-default" ng-click="play()" ng-disabled="isPlaying">
+									  <i class="fa fa-play fa-2x "></i>
+									</button>
+									
+									<button type="button" class="btn btn-default" ng-click="pause()" ng-disabled="!isPlaying">
+									  <i class="fa fa-pause fa-2x"></i>
+									</button>
+								</div>
+							</div>
+							
+							<div class="col-md-6 pull-right">
+								<div class="btn-group" role="group">
+									<button type="button" class="btn btn-default" ng-click="backward()">
+									  <i class="fa fa-backward fa-2x"></i>
+									</button>
+									
+									<button type="button" class="btn btn-default" ng-click="forward()">
+									  <i class="fa fa-forward fa-2x"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>					
+				</div>
+				
+			</div>
+		</div>
+		<div class="col-md-3"> </div>
+	</div>
+</div>	

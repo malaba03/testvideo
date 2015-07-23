@@ -1,15 +1,15 @@
-app.factory('VideoModel', function($http, dataService) {
-	var url,
+app.factory('VideoModel', function($http) {
+	var src,
 		title,
 		descrition,
-		author;
+		type;
 	
 	function VideoModel(data) {
 		//Initialising video attributes
-		this.url = "";
+		this.src = "";
 		this.title = "";
 		this.descrition = "";
-		this.author = "";
+		this.type = "";
 		//Loading video attributes from data received
         if (data) {
             this.setData(data);
