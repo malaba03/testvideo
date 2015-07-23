@@ -8,7 +8,7 @@ app.config(function($routeProvider) {
 		title: 'Home',
 		templateUrl : 'view/home.html'
 	}).
-	when('/video/:videoName', {// route for a video page
+	when('/video/:videoName/:type', {// route for a video page
 		templateUrl : 'view/video.html',
 		controller : 'VideoController'
 	});

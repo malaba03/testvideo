@@ -1,9 +1,8 @@
 Controllers.controller('VideoController', ['$scope', "$sce", '$routeParams', 'VideoService', function($scope, $sce, $routeParams, VideoService) {
-	$scope.videoName = $routeParams.videoName;
 	
 	//var videoSrc = "https://github.com/malaba03/testvideo/blob/master/videos/video1.mp4";
-	var videoSrc = "/videos/video1.mp4",
-		type = "video/mp4",
+	var videoSrc = "/videos/"+$routeParams.videoName,
+		type = "video/"+$routeParams.type,
 		options = {
 		    'controls' : false,
 		    'autoplay' : false,
